@@ -25,18 +25,5 @@ export default function PieChart({ data }) {
             datasets: [{ data: [] }],
         };
 
-    const options = {
-        plugins: {
-            datalabels: {
-            color: "#fff",
-            font: {
-                weight: "bold",
-                size: 14,
-            },
-            formatter: (value) => `${value}`, // Format to show the value directly
-            },
-        },
-        };
-
     return <Pie data={chartData} />;
 }
