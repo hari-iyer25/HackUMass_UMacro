@@ -4,7 +4,7 @@
 
 import { PlusIcon } from '@heroicons/react/20/solid'
 import { useSearchParams } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Oval } from "react-loader-spinner";
 import SemiCircleProgressBar from "react-progressbar-semicircle";
 
@@ -54,6 +54,7 @@ export default function Results() {
     }
 
     return (
+        <Suspense>
         <div className="flex flex-col justify-center px-8 items-center">
             <h2 className="text-white font-semibold p-3 text-4xl">Plate Overview</h2>
             <dl className="mt-5 grid sm:grid-cols-4 gap-5 grid-cols-2">
@@ -106,5 +107,6 @@ export default function Results() {
                 Retake Photo
             </a>
         </div>
+        </Suspense>
     );
 }
