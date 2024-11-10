@@ -10,7 +10,7 @@ import SemiCircleProgressBar from "react-progressbar-semicircle";
 
 import PieChart from "./PieChart";
 
-export default function Results() {
+function Results() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -54,7 +54,6 @@ export default function Results() {
     }
 
     return (
-        <Suspense>
         <div className="flex flex-col justify-center px-8 items-center">
             <h2 className="text-white font-semibold p-3 text-4xl">Plate Overview</h2>
             <dl className="mt-5 grid sm:grid-cols-4 gap-5 grid-cols-2">
@@ -107,6 +106,9 @@ export default function Results() {
                 Retake Photo
             </a>
         </div>
-        </Suspense>
     );
+}
+
+export default function ResultsContainer() {
+    return <Suspense><Results /></Suspense>
 }
